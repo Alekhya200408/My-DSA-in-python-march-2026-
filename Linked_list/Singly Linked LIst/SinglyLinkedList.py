@@ -7,6 +7,17 @@ class SinglyLinkedList:
     def __init__(self,head=None):
         self.head=head
 
+    def InsertatEnd(self,value):
+        temp=Node(value)
+        if(self.head!=None):
+            t1=self.head
+            while(t1.next!=None):
+                t1=t1.next  
+            t1.next=temp
+        else:
+            self.head=temp    
+    
+    #x is basically which node value after i add new node 
     def InsertatMid(self,value,x):
         temp=Node(value)
         t1=self.head
@@ -24,15 +35,9 @@ class SinglyLinkedList:
         temp=Node(value)
         temp.next=self.head
         self.head=temp
-    def InsertatEnd(self,value):
-        temp=Node(value)
-        if(self.head!=None):
-            t1=self.head
-            while(t1.next!=None):
-                t1=t1.next  
-            t1.next=temp
-        else:
-            self.head=temp
+
+
+    
     
     def printLL(self):
         if(self.head!=None):
@@ -40,7 +45,27 @@ class SinglyLinkedList:
             while(t1.next!=None):
                 print(t1.data)
                 t1=t1.next
-            print(t1.data)
+            print(t1.data) #for printing the last location
+
+# for deleting
+    def deleteLL(self,value):
+        t1=self.head
+        prev=t1
+        if(t1==None):
+            return
+        if(t1.data==value):
+            self.head=t1.next
+            return
+        while(t1!=None):
+            if(t1.data==value):
+                prev.next=t1.next
+                return
+            else:
+                # for continue
+                prev=t1
+                t1=t1.next
+        
+ 
 obj=SinglyLinkedList()
 obj.InsertatEnd(10)
 obj.InsertatEnd(20)
@@ -48,4 +73,5 @@ obj.InsertatMid(30,20)
 obj.InsertatEnd(40)
 obj.InsertatBeg(5)    
 obj.InsertatBeg(2)
+obj.deleteLL(40)
 obj.printLL()
