@@ -16,12 +16,12 @@ def insert(root,value):
            root.right= insert(root.right,value)
         return root  
  
-def Search(root,value):
+def Search(root,value): 
         if(root==None):
-            print("Element is not found",end='\n')
+            print("Element is not found ",end='\n')
             return 
         if(root.data==value):
-            print("Element Found",end='\n')
+            print("Element Found ",end='\n')
             return 
         if(root.data>value):
            Search(root.left,value)
