@@ -6,7 +6,7 @@ class Node:
 
 def preOrder(root):
     if(root!=None):
-        print(root.data, end=" ")
+        print(root.data, end="\n ")
         preOrder(root.left)
         preOrder(root.right)
 def InOrder(root):
