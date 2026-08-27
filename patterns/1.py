@@ -2,11 +2,12 @@
 # ****
 # ****
 # ****
+# n x n pattern
 
-def four_star():
-    for i in range(5):
-        for j in range(5):
+def four_star(n):
+    for i in range(n):
+        for j in range(n):
             print("*",end=' ')
         print()
 
-four_star()
+four_star(2)
